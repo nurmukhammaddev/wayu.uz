@@ -7,10 +7,8 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from webdriver_manager.chrome import ChromeDriverManager
 from .models import Instagramlink
-
-from django.core.files import File
 import urllib.request
-import os
+
 
 
 def web_scraping():
@@ -53,5 +51,6 @@ def web_scraping():
                 urllib.request.urlretrieve(str(post.url), f"{parent_dir}/{i}.jpg")
                 obj = Instagramlink.objects.create(link=a, image=f"instagram/{i}.jpg")
                 obj.save()
+            driver.quit()
 
 

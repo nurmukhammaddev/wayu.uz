@@ -1,5 +1,6 @@
 from django.db import models
 import json
+# from modeltranslation.translation import addtranslations
 from phonenumber_field.modelfields import PhoneNumberField
 from ckeditor.fields import RichTextField
 from hitcount.models import HitCountMixin, HitCount
@@ -20,6 +21,7 @@ class Management(models.Model):
     class Meta:
         verbose_name = 'Management'
         verbose_name_plural = 'Managements'
+        # translatable_fields = ('name', 'position', 'reception_days', 'email')
 
 
 class Representation(models.Model):
@@ -80,8 +82,8 @@ class Instagramlink(models.Model):
 
 
 
-    class MEta:
-        verbose_name = 'Instagram Link'
+    class Meta:
+        verbose_name = 'Instagramlink'
         verbose_name_plural = 'Instagram Links'
 
     def __str__(self):
